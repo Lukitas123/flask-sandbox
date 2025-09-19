@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mini blog </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar-layout">
+        <a class="navbar-item" href="{{ url_for('index') }}">Inicio</a>
+        <a class="navbar-item" href="{{ url_for('new-post') }}">Nuevo Post</a>
+    </nav>
+    
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 - Tu Nombre</p>
+    </footer>
+</body>
+</html>
