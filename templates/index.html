@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    {% extends "base.html" %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+  <div class="post-list">
+    <h2>Últimas Entradas</h2>
+    {% for post in posts %}
+      <article class="post-summary">
+        <header class="post-header">
+          <h3>{{ post.title }}</h3>
+          <p class="post-meta">
+            Escrito por {{ post.author }} el {{ post.date }}
+          </p>
+        </header>
+        <div class="post-content-summary">
+          <p>{{ post.content }}</p>
+        </div>
+      </article>
+    {% else %}
+      <p>Aún no hay posts</p>
+    {% endfor %}
+  </div>
+{% endblock %}

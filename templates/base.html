@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mini blog </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='static/css/styles.css') }}">
+    <title>Mi Blog - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <nav class="navbar-layout">
-        <a class="navbar-item" href="{{ url_for('index') }}">Inicio</a>
-        <a class="navbar-item" href="{{ url_for('new-post') }}">Nuevo Post</a>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('new_post') }}">Nuevo Post</a>
     </nav>
-    
-    <main>
+
+    <main class="container">
         {% block content %}
-        
         {% endblock %}
     </main>
 
     <footer>
-        <p>© 2025 - Tu Nombre</p>
+        <p>© 2025 - Florianopolis</p>
     </footer>
 </body>
 </html>
